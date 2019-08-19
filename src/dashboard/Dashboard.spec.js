@@ -1,18 +1,17 @@
 import React from "react";
+import { render, queryAllByText } from "react-testing-library";
 import renderer from "react-test-renderer";
 
 import Dashboard from "./Dashboard";
 
 describe("<Dashboard />", () => {
-  it("should match snapshot", () => {
-    const tree = renderer.create(<Dashboard />);
+  it("should match snapshot", () => {});
 
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-});
-
-describe("<Dashboard />", () => {
-  it("should add nums", () => {
-    expect(addNums(2, 4)).toBe(6);
+  it("should show controls and display", () => {
+    const { getByText } = render(<Dashboard />);
+    getByText(/unlocked/i);
+    getByText(/open/i);
+    getByText(/lock gate/i);
+    getByText(/close gate/i);
   });
 });

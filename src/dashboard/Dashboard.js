@@ -11,9 +11,6 @@ class Dashboard extends React.Component {
 
   render() {
     const { closed, locked } = this.state;
-    const addNums = (num1, num2) => {
-      return num1 + num2;
-    };
 
     return (
       <>

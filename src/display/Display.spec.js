@@ -1,12 +1,11 @@
 import React from "react";
-import renderer from "react-test-renderer";
-
+import { render, queryAllByText } from "@testing-library/react";
 import Display from "./Display";
 
 describe("<Display />", () => {
-  it("should match snapshot", () => {
-    const tree = renderer.create(<Display />);
-
-    expect(tree.toJSON()).toMatchSnapshot();
+  it("displays gate is locked when locked", () => {
+    const display = render(<Display locked={false} closed={false} />);
+    expect(display.getByText("Unlocked"));
+    expect(display.getByText("Open"));
   });
 });
