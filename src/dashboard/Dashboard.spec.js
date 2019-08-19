@@ -10,3 +10,9 @@ describe("<Dashboard />", () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
+
+describe("<Dashboard />", () => {
+  it("should add nums", () => {
+    expect(addNums(2, 4)).toBe(6);
+  });
+});
